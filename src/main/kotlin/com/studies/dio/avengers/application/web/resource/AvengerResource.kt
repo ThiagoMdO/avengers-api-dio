@@ -51,7 +51,7 @@ class AvengerResource(
                .body(AvengerResponse.from(it))
         }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/detail")
     fun updateAvenger(@PathVariable("id") id:Long, @Valid @RequestBody request: AvengerRequest) =
         repository.getDetail(id)?.let {
             AvengerRequest.to(it.id, request).apply {
